@@ -1,0 +1,56 @@
+2023-05-14 21:37:57,265	ERROR	192.168.0.209 exception when fetching from device...
+Traceback (most recent call last):
+  File "D:\attendance_synce\erpnext_sync.py", line 165, in get_all_attendance_from_device
+    conn = zk.connect()
+           ^^^^^^^^^^^^
+  File "C:\Users\Nong\AppData\Local\Programs\Python\Python311\Lib\site-packages\zk\base.py", line 367, in connect
+    raise ZKNetworkError("can't reach device (ping %s)" % self.__address[0])
+zk.exception.ZKNetworkError: can't reach device (ping 192.168.0.209)
+2023-05-14 21:37:57,311	ERROR	exception when calling pull_process_and_push_data function for device{"device_id": "test_1", "ip": "192.168.0.209", "punch_direction": null, "clear_from_device_on_fetch": false}
+Traceback (most recent call last):
+  File "D:\attendance_synce\erpnext_sync.py", line 165, in get_all_attendance_from_device
+    conn = zk.connect()
+           ^^^^^^^^^^^^
+  File "C:\Users\Nong\AppData\Local\Programs\Python\Python311\Lib\site-packages\zk\base.py", line 367, in connect
+    raise ZKNetworkError("can't reach device (ping %s)" % self.__address[0])
+zk.exception.ZKNetworkError: can't reach device (ping 192.168.0.209)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\attendance_synce\erpnext_sync.py", line 78, in main
+    pull_process_and_push_data(device, device_attendance_logs)
+  File "D:\attendance_synce\erpnext_sync.py", line 105, in pull_process_and_push_data
+    device_attendance_logs = get_all_attendance_from_device(device['ip'], device_id=device['device_id'], clear_from_device_on_fetch=device['clear_from_device_on_fetch'])
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\attendance_synce\erpnext_sync.py", line 186, in get_all_attendance_from_device
+    raise Exception('Device fetch failed.')
+Exception: Device fetch failed.
+2023-05-14 21:38:01,263	ERROR	192.168.2.209 exception when fetching from device...
+Traceback (most recent call last):
+  File "D:\attendance_synce\erpnext_sync.py", line 165, in get_all_attendance_from_device
+    conn = zk.connect()
+           ^^^^^^^^^^^^
+  File "C:\Users\Nong\AppData\Local\Programs\Python\Python311\Lib\site-packages\zk\base.py", line 367, in connect
+    raise ZKNetworkError("can't reach device (ping %s)" % self.__address[0])
+zk.exception.ZKNetworkError: can't reach device (ping 192.168.2.209)
+2023-05-14 21:38:01,263	ERROR	exception when calling pull_process_and_push_data function for device{"device_id": "test_2", "ip": "192.168.2.209", "punch_direction": null, "clear_from_device_on_fetch": false}
+Traceback (most recent call last):
+  File "D:\attendance_synce\erpnext_sync.py", line 165, in get_all_attendance_from_device
+    conn = zk.connect()
+           ^^^^^^^^^^^^
+  File "C:\Users\Nong\AppData\Local\Programs\Python\Python311\Lib\site-packages\zk\base.py", line 367, in connect
+    raise ZKNetworkError("can't reach device (ping %s)" % self.__address[0])
+zk.exception.ZKNetworkError: can't reach device (ping 192.168.2.209)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\attendance_synce\erpnext_sync.py", line 78, in main
+    pull_process_and_push_data(device, device_attendance_logs)
+  File "D:\attendance_synce\erpnext_sync.py", line 105, in pull_process_and_push_data
+    device_attendance_logs = get_all_attendance_from_device(device['ip'], device_id=device['device_id'], clear_from_device_on_fetch=device['clear_from_device_on_fetch'])
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\attendance_synce\erpnext_sync.py", line 186, in get_all_attendance_from_device
+    raise Exception('Device fetch failed.')
+Exception: Device fetch failed.

@@ -11,6 +11,23 @@ from logging.handlers import RotatingFileHandler
 import pickledb
 from zk import ZK, const
 
+# Coding by Nong
+#code Minimize console
+
+# import ctypes
+# ctypes.windll.user32.ShowWindow( ctypes.windll.kernel32.GetConsoleWindow(), 6 )
+
+#code disable close Console
+
+# import win32console, win32gui, win32con
+# hwnd = win32console.GetConsoleWindow()
+# if hwnd:
+#     hMenu = win32gui.GetSystemMenu(hwnd, 0)
+#     if hMenu:
+#         win32gui.DeleteMenu(hMenu, win32con.SC_CLOSE, win32con.MF_BYCOMMAND)
+
+# end Coding by Nong
+
 EMPLOYEE_NOT_FOUND_ERROR_MESSAGE = "No Employee found for the given employee field value"
 EMPLOYEE_INACTIVE_ERROR_MESSAGE = "Transactions cannot be created for an Inactive Employee"
 DUPLICATE_EMPLOYEE_CHECKIN_ERROR_MESSAGE = "This employee already has a log with the same timestamp"
