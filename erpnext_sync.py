@@ -196,7 +196,10 @@ def send_to_erpnext(employee_field_value, timestamp, device_id=None, log_type=No
     Example: send_to_erpnext('12349',datetime.datetime.now(),'HO1','IN')
     """
     endpoint_app = "hrms" if ERPNEXT_VERSION > 13 else "erpnext"
-    url = f"{config.ERPNEXT_URL}/api/method/{endpoint_app}.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field"
+    url = f"{config.ERPNEXT_URL}/api/method/{endpoint_app}.hr.doctype.employee_checkin.employee_checkin.add_log_based_on_employee_field.{employee_field_value}"
+    
+    print("1: {url}")
+    
     headers = {
         'Authorization': "token "+ config.ERPNEXT_API_KEY + ":" + config.ERPNEXT_API_SECRET,
         'Accept': 'application/json'
@@ -252,6 +255,9 @@ def update_shift_last_sync_timestamp(shift_type_device_mapping):
 
 def send_shift_sync_to_erpnext(shift_type_name, sync_timestamp):
     url = config.ERPNEXT_URL + "/api/resource/Shift Type/" + shift_type_name
+
+    print("2: {url}")
+
     headers = {
         'Authorization': "token "+ config.ERPNEXT_API_KEY + ":" + config.ERPNEXT_API_SECRET,
         'Accept': 'application/json'
